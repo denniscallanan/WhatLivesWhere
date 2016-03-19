@@ -189,3 +189,10 @@ function setCircleListener(a){
 
 }
 
+
+function resetCamera(){
+
+  map.setZoom(3);
+  map.panTo(new google.maps.LatLng(40, 0));
+
+}
