@@ -196,3 +196,15 @@ function resetCamera(){
   map.panTo(new google.maps.LatLng(40, 0));
 
 }
+
+function clearSearch(){
+
+  $('.searchpiece_input').val('');
+
+  search();
+
+}
+
+function search(){
+  
+}
