@@ -25,3 +25,7 @@ function share(){
 	}
 
 }
+
+$(document).ready(function(){
+	$('#share_inp').val(window.location.href);
+})
