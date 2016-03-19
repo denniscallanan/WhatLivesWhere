@@ -207,10 +207,12 @@ function clearSearch(){
 
 function hideData(){
   $("#wrapper").css('display','none');
+  $("#tips").css('display','block');
 }
 
 function showData(){
   $("#wrapper").css('display','block');
+  $("#tips").css('display','none');
 }
 
 function search(){
