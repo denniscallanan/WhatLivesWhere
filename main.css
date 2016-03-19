@@ -313,8 +313,7 @@ body{
 
 	background-color: none;
 
-	transition:background-color 0.5s, height 0s;
-	transition-delay:height 1s;
+	transition:background-color 0.5s, height 0s ease 0.5s;
 
 }
 
