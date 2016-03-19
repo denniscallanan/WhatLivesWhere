@@ -411,11 +411,15 @@ body{
 
 	float:left;
 
+	transition:background-image 0.3s;
+
 }
 
 .tool_cb_checked{
 
 	background-image:url('images/checked.png');
+
+	transition:background-image 0.3s;
 
 }
 
