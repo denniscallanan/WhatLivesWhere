@@ -14,27 +14,27 @@
 
   <body>
 
-    <div id = "nav">
+    <div id="nav" class="noselect">
       <div id="nav_search" class="clickable"></div>
       <div class="nav_el clickable">FIND</div>
       <div class="nav_el clickable">HISTORY</div>
       <div class="nav_el clickable">GAME</div>
     </div>
 
-    <div id="map">
+    <div id="map" class="noselect">
       <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjr7K4az1dKyT5PP9pVXPteuNzMqSuWOM
         &libraries=visualization&callback=initMap">
       </script>
     </div>
 
-    <div id="map_buttons">
+    <div id="map_buttons" class="noselect">
       <div class="map_button clickable" onclick="clearCircles();">Clear Selection</div>
       <div class="map_button clickable" onclick="resetCamera();">Reset Camera</div>
       <div class="map_button clickable" onclick="share();" style="backgroundcolor:#6495ed;">Share Results</div>
     </div>
 
-    <div id="menu">
+    <div id="menu" class="noselect">
       
       <div id="search">
 
@@ -53,7 +53,17 @@
       <div id="tools">
 
         <div class="tool">
-          <div class="tool_cb"> </div>
+          <div class="tool_cb tool_cb_checked"> </div>
+          <div class="tool_cb_lbl"> USE MAP </div>
+        </div>
+
+        <div class="tool">
+    	  <div class="tool_cb"> </div>
+    	  <div class="tool_cb_lbl"> INVERT CIRCLES </div>
+        </div>
+
+        <div class="right_tool">
+          <div class="tool_btn clickable" onclick='clearSearch();'> Clear Search </div>
         </div>
 
       </div>

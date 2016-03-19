@@ -2,6 +2,17 @@
 
 	padding: 0px;
 	margin: 0px;
+
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* IE/Edge */
+	user-select: none;           /* non-prefixed version, currently
+	not supported by any browser */
 }
 
 html, body { 
@@ -372,11 +383,11 @@ body{
 #tools{
 
 	width:calc(100% - 0px);
-	height:75px;
+	height:67px;
 
 	background:rgb(220,220,220);
 
-	padding-top:10px;
+	padding-top:18px;
 
 	margin-top:10px;
 
@@ -384,7 +395,8 @@ body{
 
 .tool{
 
-
+	margin-left:18px;
+	float:left;
 
 }
 
@@ -397,6 +409,8 @@ body{
 
 	cursor:pointer;
 
+	float:left;
+
 }
 
 .tool_cb_checked{
@@ -405,6 +419,59 @@ body{
 
 }
 
+.tool_cb_lbl{
+	float:left;
+	line-height:50px;
+
+	font-family:sans-serif;
+	font-weight:lighter;
+	font-size:18px;
+
+	padding-left:9px;
+}
+
+.right_tool{
+
+	margin-right:18px;
+	float:right;
+
+}
+
+.tool_btn{
+
+	height:48px;
+
+	background-color:white;
+	color:black;
+
+	font-size:12px;
+	font-family:Arial;
+	font-weight:lighter;
+
+	text-align:center;
+
+	height:48px;
+	line-height:50px;
+
+	border-radius:4px;
+
+	padding-left:14px;
+	padding-right:14px;
+
+	border:1px solid #DDD;
+
+	transition:background 0.3s, color 0.2s;
+
+}
+
+.tool_btn:hover{
+
+	background:rgb(110,110,110);
+	color:white;
+
+	transition:background 0.3s, color 0.2s;
+
+}
 
 
 
