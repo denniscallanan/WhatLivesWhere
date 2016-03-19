@@ -205,6 +205,14 @@ function clearSearch(){
 
 }
 
+function hideData(){
+  $("#wrapper").css('display','none');
+}
+
+function showData(){
+  $("#wrapper").css('display','block');
+}
+
 function search(){
-  
+
 }

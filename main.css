@@ -141,6 +141,8 @@ body{
 
 #wrapper{
 
+	display:none;
+
 	position:fixed;
 
 	padding-left:0px;
@@ -156,6 +158,31 @@ body{
 	background:white;
 
 	transition: top 0.5s, height 0.5s;
+
+}
+
+#tips{
+
+	position:fixed;
+
+	padding:20px;
+
+	top:calc(100% - 198px);
+	left:0px;
+
+	width:600px;
+	height:254px;
+
+	z-index:1051;
+
+	background:rgb(110,110,110);
+
+	color:white;
+
+	font-family:sans-serif;
+	font-weight:lighter;
+
+	font-size:18px;
 
 }
 
