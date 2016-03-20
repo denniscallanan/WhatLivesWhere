@@ -26,9 +26,7 @@ function newcircle(rad, pos, m) {
   }
   setTimeout(function() {
     if(mouseIsDown) {
-      /*rad+=((m*20)*(Math.pow(Math.abs(16-map.getZoom()), 3)));*/
       rad+=m*90000/map.getZoom();
-      /*rad+=30000/(map.getZoom()-2);*/
       if(rad<=0){
         areas.pop().circles[0].setMap(null); 
         mouseIsDown = false; 
@@ -52,9 +50,7 @@ function oldcircle(a, p, r, m) {
   
   setTimeout(function() {
     if(mouseIsDown) {
-      /*r+=((m*20)*(Math.pow(Math.abs(16-map.getZoom()), 3)));*/
       r+=m*90000/map.getZoom();
-      /*r+=30000/(map.getZoom()-2);*/
       if(r<=0){
         areas.splice(a,1)[0].circles[0].setMap(null); 
         mouseIsDown = false; 
@@ -249,11 +245,21 @@ function search(inf){
 
 
 
+var circles = [];
 
-
-
+function getCircles(){
+	circles=[];
+	for(x in areas){
+		var info = "";
+		var curLat = areas[x].lat;
+		var curLng = areas[x].lng;
+		var curRad = areas[x].circles[0].radius;
+		info += ("" + curLat + "," + curLng + "," + curRad);
+		circles.push(info);
+	}
+}
 
 
 function performRequest(){
-	alert('Released!');
+	getCircles();
 }
