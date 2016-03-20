@@ -220,9 +220,12 @@ body{
 
 	background:rgb(220,220,220);
 	margin-bottom:10px;
+	padding-bottom:7px;
 	margin-left:10px;
-	height:85px;
+	min-height:78px;
 	width:300px;
+	
+	overflow:auto;
 
 	transition:background 0.3s, color 0.2s;
 
@@ -247,11 +250,16 @@ body{
 
 }
 
-.scrolldiv_el_title{
-
+.scrolldiv_el_w{
 	float:left;
 	margin-top:15px;
-	margin-left:30px;
+	margin-left:15px;
+	width:190px;
+}
+
+.scrolldiv_el_title{
+
+	text-align:center;
 	font-family:sans-serif;
 	font-weight:lighter;
 
@@ -259,10 +267,8 @@ body{
 
 .scrolldiv_el_loctext{
 
-	float:left;
 	font-size:12px;
-	margin-top:-38px;
-	margin-left:100px;
+	margin-top:8px;
 	font-family:sans-serif;
 	font-weight:lighter;
 
@@ -615,19 +621,14 @@ body{
 	
 	z-index:1501;
 	
-	top:51px;
 	top:10px;
-	left:calc(50% - 410px);
 	left:412px;
 	
-	width:820px;
 	width:calc(100% - 800px);
 	height:0px;
 	
 	padding:0px;
 	
-	background:rgb(240,230,140);
-	background:rgb(189,183,107);
 	background:rgba(255,255,255,0);
 	color:rgba(0,0,0,0);
 	
@@ -673,4 +674,38 @@ body{
 	background:black;
 	color:white;
 	
+}
+
+
+
+
+
+
+@media screen and (max-width:1180px){
+	#wrapper{
+		width:480px;
+	}
+	
+	.scrolldiv{
+		width:240px;
+	}
+	
+	.scrolldiv_el{
+		width:220px;
+	}
+	
+	.scrolldiv_el_w{
+		width:190px;
+	}
+	
+	.scrolldiv_el_img{
+		display:none;
+	}
+	
+	#menu{
+
+		left:480px;
+		width:calc(100% - 501px);
+
+	}
 }
