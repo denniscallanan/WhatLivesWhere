@@ -637,9 +637,10 @@ body{
 	
 	border-radius:2px;
 	border-width:0px;
+	border-style:solid;
 	border-color:rgba(220,220,220,0);
 
-	transition:background 1.2s, padding 0s ease 1.2s, height 0s ease 1.2s, border-color 1.4s, border-width 0s ease 1.4s, color 1.2s;
+	transition:background 1.2s, padding 0s ease 1.2s, height 0s ease 1.2s, border-color 1.2s, border-width 0s ease 1.2s, color 1.2s;
 	
 }
 
@@ -648,11 +649,11 @@ body{
 	height:11px !important;
 	padding:9px !important;
 	background:white !important;
-	border-width:1px !important;
+	border-width:1px!important;
 	border-color:#EEE !important;
 	color:black !important;
 	
-	transition:background 0.2s, padding 0s, height 0s, border-color 0.2s, border-width 0s, color 0.2s !important;
+	transition:background 0.2s, padding 0s, height 0s, border-color 0.3s, border-width 0s, color 0.2s !important;
 	
 }
 
