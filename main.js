@@ -222,6 +222,7 @@ function showData(){
   $("#tips").css('display','none');
 }
 
-function search(inf=true){
+function search(inf){
+	inf = typeof inf !== 'undefined' ? inf : true;
 	if(inf==true){info('Searching...');}
 }
