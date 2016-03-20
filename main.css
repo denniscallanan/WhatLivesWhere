@@ -282,7 +282,6 @@ body{
 	top:calc(100% - 198px);
 	left:640px;
 
-	background:url('UIDESIGN.png');
 	background:white;
 
 	width:780px;
@@ -707,5 +706,9 @@ body{
 		left:480px;
 		width:calc(100% - 501px);
 
+	}
+	
+	#tips{
+		width:440px;
 	}
 }
