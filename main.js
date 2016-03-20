@@ -269,6 +269,8 @@ var circles = [];
 
 var circle_data = {};
 
+var circle_list = [];
+
 function getCircles(){
 	circles=[];
 	for(x in areas){
@@ -293,7 +295,7 @@ function addNewCircleData(){
 	for(var cid in circles){
 		circle = circles[cid];
 		if(!(circle in circle_data)){
-			circle_data[circle] = 'dog.png:Dachschund:General household regions,<br>Ireland and America';
+			circle_data[circle] = 'dog.png:Dachschund:General household regions' + Math.floor((Math.random() * 3) + 1) + ',<br>Ireland and America_'+'dog.png:Dachschund:General household regions' + Math.floor((Math.random() * 2) + 1); + ',<br>Ireland and America';
 		}
 	}
 }
@@ -303,8 +305,23 @@ function createBaseCircleData(){
 	clearUselessCircleData();
 }
 
+function createCircleList(){
+  circle_list=[];
+  for(var key in circle_data){
+    var val = circle_data[key];
+    splited = val.split('_');
+    for(var sid in splited){
+      spl = splited[sid];
+      if(!(circle_list.indexOf(spl) >= 0)){
+        circle_list.push(spl);
+      }
+    }
+  }
+}
+
 function performRequest(){
 	createBaseCircleData();
 	addNewCircleData();
 	hideDataIfNeeded();
+  createCircleList();
 }
