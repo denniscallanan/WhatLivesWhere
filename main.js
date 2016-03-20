@@ -35,7 +35,9 @@ function newcircle(rad, pos, m) {
         return;
       }
       newcircle(rad, pos, m);
-    }    
+    } else{
+		performRequest();
+	} 
   }, 20)
 }
 
@@ -57,9 +59,12 @@ function oldcircle(a, p, r, m) {
         areas.splice(a,1)[0].circles[0].setMap(null); 
         mouseIsDown = false; 
         return;
-      }
+      } else{
+	  }
       oldcircle(a, p, r, m);
-    }    
+    } else{
+		performRequest();
+	}   
   }, 20)
 }
 
@@ -225,4 +230,30 @@ function showData(){
 function search(inf){
 	inf = typeof inf !== 'undefined' ? inf : true;
 	if(inf==true){info('Searching...');}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function performRequest(){
+	alert('Released!');
 }
