@@ -208,7 +208,7 @@ function clearSearch(){
 
   info('Search has been cleared!');
   
-  search();
+  search(false);
 
 }
 
@@ -222,6 +222,6 @@ function showData(){
   $("#tips").css('display','none');
 }
 
-function search(){
-
+function search(inf=true){
+	if(inf==true){info('Searching...');}
 }
