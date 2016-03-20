@@ -1,5 +1,12 @@
 var shareOpen = false;
 
+function info(tex){
+	$("#info").html(tex);
+	$("#info").addClass('info_active');
+	setTimeout(function(){$("#info").removeClass('info_active')}, 700);
+	
+}
+
 function cancelShare(){
 
 	if(shareOpen == true){
@@ -14,6 +21,8 @@ function cancelShare(){
 }
 
 function share(){
+	
+	$('#share_inp').val(window.location.href);
 
 	if(shareOpen == false){
 
@@ -25,7 +34,3 @@ function share(){
 	}
 
 }
-
-$(document).ready(function(){
-	$('#share_inp').val(window.location.href);
-})

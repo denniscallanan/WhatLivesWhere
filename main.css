@@ -597,3 +597,80 @@ body{
 
 	color:black;
 }
+
+
+
+
+
+
+
+
+
+
+#info{
+	
+	position:fixed;
+	
+	overflow:hidden;
+	
+	z-index:1501;
+	
+	top:51px;
+	top:10px;
+	left:calc(50% - 410px);
+	left:412px;
+	
+	width:820px;
+	width:calc(100% - 800px);
+	height:0px;
+	
+	padding:0px;
+	
+	background:rgb(240,230,140);
+	background:rgb(189,183,107);
+	background:rgba(255,255,255,0);
+	color:rgba(0,0,0,0);
+	
+	font-family:sans-serif;
+	font-weight:light;
+	font-size:12px;
+	
+	border-radius:2px;
+	border-width:0px;
+	border-color:rgba(220,220,220,0);
+
+	transition:background 1.2s, padding 0s ease 1.2s, height 0s ease 1.2s, border-color 1.4s, border-width 0s ease 1.4s, color 1.2s;
+	
+}
+
+.info_active{
+	
+	height:11px !important;
+	padding:9px !important;
+	background:white !important;
+	border-width:1px !important;
+	border-color:#EEE !important;
+	color:black !important;
+	
+	transition:background 0.2s, padding 0s, height 0s, border-color 0.2s, border-width 0s, color 0.2s !important;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+.copy{
+	
+	width:100px;
+	height:31px;
+	background:black;
+	color:white;
+	
+}

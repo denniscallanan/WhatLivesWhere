@@ -33,6 +33,11 @@
       <div class="map_button clickable" onclick="resetCamera();">Reset Camera</div>
       <div class="map_button clickable" onclick="share();" style="backgroundcolor:#6495ed;">Share Results</div>
     </div>
+	
+	<div id="info">
+		<div id="info_clearsel" class="info">Selection has been cleared!</div>
+		<div id="info_resetcam" class="info">Camera set to longitude:0 latitude:40 zoom:3... Reset...</div>
+	</div>
 
     <div id="menu" class="noselect">
       
@@ -266,7 +271,7 @@
     		<div id="share_share" class="noselect">Share Menu</div>
     	</div><br><br>
     	Share this url to your friends and family!<br><br>
-    	<input id="share_inp" disabled='disabled' type="text" class="share_inp">
+    	<input id="share_inp" disabled='disabled' type="text" class="share_inp"><br>
     </div>
 
     <div id="share_black"></div>

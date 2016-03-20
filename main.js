@@ -113,7 +113,7 @@ function initMap() {
 
   google.maps.event.addListener(map, 'mousemove', function (event) {
     currentPos = event.latLng;
-    console.log(currentPos.lat() + ", " + currentPos.lng());
+    //console.log(currentPos.lat() + ", " + currentPos.lng());
   });
 }
 
@@ -143,18 +143,18 @@ function loopThrough(){
     var curRad = areas[x].circles[0].radius;
     info += ("Circle centered at (" + curLat + ", " + curLng +  ") with radius " + curRad + "\n");
   }
-  console.log(info);
+  //console.log(info);
 }
 
 function pointExistsInCircle(pt){
   for(x in areas){
 
     if(pointInCircle(pt, areas[x].circles[0].radius, areas[x].point)){
-      console.log("going to return " + x);
+      //console.log("going to return " + x);
       return x;
     }
   }
-  console.log("going to return false"); 
+  //console.log("going to return false"); 
   return -1;
   
 }
@@ -170,6 +170,9 @@ function clearCircles(){
     areas[x].circles[0].setMap(null);
   }
   areas.length = 0;
+  
+  info('Selection has been cleared!');
+  
 }
 
 function setCircleListener(a){
@@ -181,7 +184,7 @@ function setCircleListener(a){
   });
 
   areas[a].circles[0].addListener('dragend',function(event) {
-    console.log("DRAG FINISHED - landed on " + event.latLng.lat() + ", " + event.latLng.lng());
+    //console.log("DRAG FINISHED - landed on " + event.latLng.lat() + ", " + event.latLng.lng());
     areas[a].lat = event.latLng.lat();
     areas[a].lng = event.latLng.lng();
     areas[a].point = event.latLng; 
@@ -194,6 +197,8 @@ function resetCamera(){
 
   map.setZoom(3);
   map.panTo(new google.maps.LatLng(40, 0));
+  
+  info('Camera set to longitude:0 latitude:40 zoom:3... Reset...');
 
 }
 
@@ -201,6 +206,8 @@ function clearSearch(){
 
   $('.searchpiece_input').val('');
 
+  info('Search has been cleared!');
+  
   search();
 
 }
