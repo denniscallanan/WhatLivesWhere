@@ -20,11 +20,7 @@ $(document).ready(function(){
 			el.addClass('tool_cb_checked');
 		}
 
-		if(isMapUsed()){
-			hideData();
-		} else{
-			showData();
-		}
+		hideDataIfNeeded();
 
 	})
 

@@ -176,6 +176,9 @@ function clearCircles(){
   
   info('Selection has been cleared!');
   
+  createBaseCircleData();
+  hideDataIfNeeded();
+  
 }
 
 function setCircleListener(a){
@@ -224,6 +227,21 @@ function showData(){
   $("#wrapper").css('display','block');
   $("#tips").css('display','none');
 }
+
+function hideDataIfNoData(){
+	if(Object.keys(circle_data).length > 0){showData();}
+	else{hideData();}
+}
+
+function hideDataIfNeeded(){
+	if(isMapUsed()){
+		hideDataIfNoData();
+	} else{
+		showData();
+	}
+}
+
+
 
 function search(inf){
 	inf = typeof inf !== 'undefined' ? inf : true;
@@ -275,13 +293,18 @@ function addNewCircleData(){
 	for(var cid in circles){
 		circle = circles[cid];
 		if(!(circle in circle_data)){
-			circle_data[circle] = 'This is a test!';
+			circle_data[circle] = 'dog.png:Dachschund:General household regions,<br>Ireland and America';
 		}
 	}
 }
 
-function performRequest(){
+function createBaseCircleData(){
 	getCircles();
 	clearUselessCircleData();
+}
+
+function performRequest(){
+	createBaseCircleData();
 	addNewCircleData();
+	hideDataIfNeeded();
 }
