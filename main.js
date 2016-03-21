@@ -271,6 +271,10 @@ var circle_data = {};
 
 var circle_list = [];
 
+var animal_list = [];
+
+var plant_list = [];
+
 function getCircles(){
 	circles=[];
 	for(x in areas){
@@ -295,7 +299,7 @@ function addNewCircleData(){
 	for(var cid in circles){
 		circle = circles[cid];
 		if(!(circle in circle_data)){
-			circle_data[circle] = 'dog.png:Dachschund:General household regions' + Math.floor((Math.random() * 3) + 1) + ',<br>Ireland and America_'+'dog.png:Dachschund:General household regions' + Math.floor((Math.random() * 2) + 1); + ',<br>Ireland and America';
+			circle_data[circle] = 'animal:mammals:dogs:dog.png:Dachschund:General household regions' + Math.floor((Math.random() * 3) + 1)+'_plant:flowers:panda.png:Dachschund:General household regions' + Math.floor((Math.random() * 2) + 1);
 		}
 	}
 }
@@ -309,9 +313,9 @@ function createCircleList(){
   circle_list=[];
   for(var key in circle_data){
     var val = circle_data[key];
-    splited = val.split('_');
+    var splited = val.split('_');
     for(var sid in splited){
-      spl = splited[sid];
+      var spl = splited[sid];
       if(!(circle_list.indexOf(spl) >= 0)){
         circle_list.push(spl);
       }
@@ -319,9 +323,24 @@ function createCircleList(){
   }
 }
 
+function createAnimalPlantLists(){
+	animal_list = [];
+	plant_list = [];
+	for(lid in circle_list){
+		var livthing = circle_list[lid];
+		var livtype = livthing.split(':')[0];
+		if(livtype == "animal"){
+			animal_list.push(livthing);
+		} else{
+			plant_list.push(livthing);
+		}
+	}
+}
+
 function performRequest(){
 	createBaseCircleData();
 	addNewCircleData();
 	hideDataIfNeeded();
-  createCircleList();
+	createCircleList();
+	createAnimalPlantLists();
 }
