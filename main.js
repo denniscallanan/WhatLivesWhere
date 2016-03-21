@@ -177,6 +177,7 @@ function clearCircles(){
   info('Selection has been cleared!');
   
   createBaseCircleData();
+  makeHtml();
   hideDataIfNeeded();
   
 }
@@ -237,7 +238,7 @@ function showData(){
 }
 
 function hideDataIfNoData(){
-	if(Object.keys(circle_data).length > 0){showData();}
+	if(circles.length > 0){showData();}
 	else{hideData();}
 }
 
@@ -287,7 +288,7 @@ var animal_html = '';
 var plant_html = '';
 var the_html = '';
 
-showLoading = true;
+showLoading = false;
 
 function getCircles(){
 	circles=[];
@@ -313,7 +314,14 @@ function addNewCircleData(){
 	for(var cid in circles){
 		circle = circles[cid];
 		if(!(circle in circle_data)){
-			circle_data[circle] = 'animal:mammals:dogs:dog.png:Dachschund:General household regions' + randint(1,3)+'_plant:flowers:panda.png:Birch Tree:Ireland<br>and other areas!' + randint(1,2);
+			circle_data[circle] = 'animal:mammals:dogs:dog.png:Dachschund:General household regions' + randint(1,56)+'_plant:flowers:panda.png:Birch Tree:Ireland<br>and other areas!' + randint(1,4)+'';
+			if(circle_data[circle].slice(-1) == '~'){
+				circle_data[circle] = circle_data[circle].slice(0,circle_data[circle].length-1);
+				showLoading = false;
+			} else{
+				showLoading = true;
+			}
+			
 		}
 	}
 }
@@ -405,14 +413,18 @@ function updateHtml(){
 	$('#wrapper').html(the_html);
 }
 
-function performRequest(){
-	createBaseCircleData();
-	addNewCircleData();
-	hideDataIfNeeded();
+function makeHtml(){
 	createCircleList();
 	createAnimalPlantLists();
 	convertDataToHtml();
 	updateHtml();
+}
+
+function performRequest(){
+	createBaseCircleData();
+	addNewCircleData();
+	makeHtml();
+	hideDataIfNeeded();
 }
 
 
