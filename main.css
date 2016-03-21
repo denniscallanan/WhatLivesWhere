@@ -719,11 +719,18 @@ body{
 	position:fixed;
 	
 	top:calc(100% - 195px);
-	left:8px;
+	left:6px;
 	
 	width:634px;
 	height:3px;
 	
 	z-index:1051;
 	
+	transition:top 0.5s;
+	
+}
+
+#wrapper:hover ~ #loading, #menu:hover ~ #loading{
+	top:3px;
+	transition:top 0.5s;
 }
