@@ -219,7 +219,9 @@ function clearSearch(){
 }
 
 function showLoadingIfNeeded(){
-  $("#loading").css('display','block');
+  if(showLoading == true){
+	$("#loading").css('display','block');
+  }
 }
 
 function hideData(){
@@ -284,6 +286,8 @@ var plant_list = [];
 var animal_html = '';
 var plant_html = '';
 var the_html = '';
+
+showLoading = true;
 
 function getCircles(){
 	circles=[];
