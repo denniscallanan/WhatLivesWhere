@@ -218,14 +218,20 @@ function clearSearch(){
 
 }
 
+function showLoadingIfNeeded(){
+  $("#loading").css('display','block');
+}
+
 function hideData(){
   $("#wrapper").css('display','none');
   $("#tips").css('display','block');
+  $("#loading").css('display','none');
 }
 
 function showData(){
   $("#wrapper").css('display','block');
   $("#tips").css('display','none');
+  showLoadingIfNeeded();
 }
 
 function hideDataIfNoData(){
