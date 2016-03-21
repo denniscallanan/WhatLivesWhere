@@ -275,6 +275,9 @@ var animal_list = [];
 
 var plant_list = [];
 
+var animal_html = '';
+var plant_html = '';
+
 function getCircles(){
 	circles=[];
 	for(x in areas){
@@ -337,10 +340,16 @@ function createAnimalPlantLists(){
 	}
 }
 
+function convertDataToHtml(){
+	animal_html = '';
+	plant_html = '';
+}
+
 function performRequest(){
 	createBaseCircleData();
 	addNewCircleData();
 	hideDataIfNeeded();
 	createCircleList();
 	createAnimalPlantLists();
+	convertDataToHtml();
 }
