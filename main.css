@@ -713,3 +713,17 @@ body{
 		width:440px;
 	}
 }
+
+#loading{
+	
+	position:fixed;
+	
+	top:calc(100% - 195px);
+	left:8px;
+	
+	width:634px;
+	height:3px;
+	
+	z-index:1051;
+	
+}

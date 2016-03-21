@@ -277,6 +277,7 @@ var plant_list = [];
 
 var animal_html = '';
 var plant_html = '';
+var the_html = '';
 
 function getCircles(){
 	circles=[];
@@ -302,7 +303,7 @@ function addNewCircleData(){
 	for(var cid in circles){
 		circle = circles[cid];
 		if(!(circle in circle_data)){
-			circle_data[circle] = 'animal:mammals:dogs:dog.png:Dachschund:General household regions' + Math.floor((Math.random() * 3) + 1)+'_plant:flowers:panda.png:Dachschund:General household regions' + Math.floor((Math.random() * 2) + 1);
+			circle_data[circle] = 'animal:mammals:dogs:dog.png:Dachschund:General household regions' + randint(1,3)+'_plant:flowers:panda.png:Birch Tree:Ireland<br>and other areas!' + randint(1,2);
 		}
 	}
 }
@@ -340,9 +341,58 @@ function createAnimalPlantLists(){
 	}
 }
 
+function convertAnimalToHtml(){
+	animal_html += '<div class="scrolldiv">\n\n';
+	for(var aid in animal_list){
+		animal_html += '	<div class="scrolldiv_el clickable">\n';
+		var animal = animal_list[aid];
+		var aninfo = animal.split(':');
+		var group = aninfo[1];
+		var class_ = aninfo[2];
+		var image_ = aninfo[3];
+		var name = aninfo[4];
+		var locations = aninfo[5];
+		animal_html += '		<div class="scrolldiv_el_img" style="content:url(\''+image_+'\')" ></div>\n';
+		animal_html += '		<div class="scrolldiv_el_w"><div class="scrolldiv_el_title">'+name+'</div>\n';
+		animal_html += '		<div class="scrolldiv_el_loctext">'+locations+'</div></div>\n'
+		animal_html += '	</div>\n\n';
+	}
+	animal_html += '</div>\n\n';
+}
+
+function convertPlantToHtml(){
+	plant_html += '<div class="scrolldiv">\n\n';
+	for(var pid in plant_list){
+		plant_html += '	<div class="scrolldiv_el clickable">\n';
+		var plant = plant_list[pid];
+		var pinfo = plant.split(':');
+		var group = pinfo[1];
+		var image_ = pinfo[2];
+		var name = pinfo[3];
+		var locations = pinfo[4];
+		plant_html += '		<div class="scrolldiv_el_img" style="content:url(\''+image_+'\')" ></div>\n';
+		plant_html += '		<div class="scrolldiv_el_w"><div class="scrolldiv_el_title">'+name+'</div>\n';
+		plant_html += '		<div class="scrolldiv_el_loctext">'+locations+'</div></div>\n'
+		plant_html += '	</div>\n\n';
+	}
+	plant_html += '</div>\n\n';
+}
+
 function convertDataToHtml(){
 	animal_html = '';
 	plant_html = '';
+	the_html = '';
+	convertAnimalToHtml();
+	convertPlantToHtml();
+	mergeHtml();
+}
+
+function mergeHtml(){
+	the_html = animal_html + plant_html;
+}
+
+function updateHtml(){
+	$('#wrapper').html(the_html);
 }
 
 function performRequest(){
@@ -352,4 +402,25 @@ function performRequest(){
 	createCircleList();
 	createAnimalPlantLists();
 	convertDataToHtml();
+	updateHtml();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function randint(min,max){
+	return Math.floor((Math.random() * (max-min+1)) + min)
 }
